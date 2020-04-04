@@ -41,21 +41,7 @@ brick.display.clear()
 brick.display.text("Press Esc. to exit.")
 #todo: calculate the time of motor-rotations.
 while not Button.escape and datetime.datetime.now() < endtime:
-    syringe_motor.run();
-
-
-
-# Write your program here
-brick.sound.beep()
-brick
-
-
-# Play a sound.
-brick.sound.beep()
-
-# Play another beep sound.
-# This time with a higher pitch (1000 Hz) and longer duration (500 ms).
-brick.sound.beep(1000, 500)
+    syringe_motor.run()
 
 
 #
