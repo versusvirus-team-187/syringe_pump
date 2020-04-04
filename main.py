@@ -40,8 +40,12 @@ endtime = datetime.datetime.now() + timedelta(hours=time)
 brick.display.clear()
 brick.display.text("Press Esc. to exit.")
 #todo: calculate the time of motor-rotations.
+rotation_per_second = flow_rate / ROUND_ML_PER_H_RATIO / 3600
+seconds_per_degree = 1 / (rotation_per_second * 360)
+
 while not Button.escape and datetime.datetime.now() < endtime:
-    syringe_motor.run()
+    syringe_motor.run_to_rel_pos(1)
+    time.sleep(seconds_per_degree)
 
 
 #
